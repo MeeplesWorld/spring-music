@@ -7,14 +7,12 @@ pipeline{
 		buildDiscarder(logRotator(numToKeepStr: '10')) 
 	} 
 	
-	tools {
-		jdk 'JAVA_8'
-	}
+    stages {
 	
-	stage('build and unit test'){
-		steps {			
-            sh "./gradlew clean assemble"
-		}
-	}
-
+        stage('build and unit test'){
+            steps {			
+                sh "./gradlew clean assemble"
+            }
+        }
+    }
 }
